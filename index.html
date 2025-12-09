@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripEasy - Flights, Trains, Bus Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo" style="cursor: pointer;" onclick="app.renderLandingPage()">
+                <h1>Trip<span>Easy</span></h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" onclick="app.renderHome('flights')"><i class="fas fa-plane"></i>
+                            Flights</a></li>
+                    <li><a href="#" onclick="app.renderHome('trains')"><i class="fas fa-train"></i> Trains</a></li>
+                    <li><a href="#" onclick="app.renderHome('buses')"><i class="fas fa-bus"></i> Buses</a></li>
+                    <li><a href="#" onclick="app.renderContact()"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions" id="user-actions">
+                <button class="btn-secondary" onclick="app.renderLogin()">Login / Signup</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="app">
+        <!-- Content will be injected here by main.js -->
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div id="loading-icon-container">
+                <!-- Icon will be injected here -->
+            </div>
+            <h2 id="loading-text">Searching best options...</h2>
+        </div>
+    </div>
+
+    <div id="chatbot-container" class="chatbot-collapsed">
+        <div class="chatbot-header" onclick="chatbot.toggle()">
+            <i class="fas fa-robot"></i> TripBot
+            <span class="toggle-icon"><i class="fas fa-chevron-up"></i></span>
+        </div>
+        <div class="chatbot-body">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot">
+                    Hello! I'm TripBot. How can I help you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input-field" placeholder="Type a message...">
+                <button onclick="chatbot.sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 TripEasy. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
